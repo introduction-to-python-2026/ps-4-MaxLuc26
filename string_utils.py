@@ -16,5 +16,17 @@ def split_at_first_digit(formula):
     return (prefix, int(num_pos))
 
 
-def split_at_first_digit(formula):
-    pass # Replace the `pass` with your code
+def split_before_each_uppercases(formula):
+    start = 0
+    end = 1
+    split_formula = []
+    for i in formula[1:]:
+      if i.isupper():
+          split_formula.append(formula[start:end])
+          start = end
+          end = start + 1
+
+      else: 
+        end += 1
+    split_formula.append(formula[start:end])
+    return (split_formula)
